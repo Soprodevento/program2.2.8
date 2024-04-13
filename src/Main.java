@@ -21,19 +21,15 @@ public class Main {
     public static int weekendCount(String[] days) {
         int count = 0;
         for(String day : days){
-            if( day.equals("Saturday")|| day.equals("Sunday") ){
+            if( isWeekend(day) ){
                 count++;
             }
         }
         return count;
     }
     public static int weekdayCount(String[] days) {
-        int count = 0;
-        for(String day : days){
-            if (!day.equals("Saturday")&&!day.equals("Sunday")){
-                count++;
-            }
-        }
-        return count;
+    int num = days.length;
+    int weekday = weekendCount(days);
+    return  num - weekday;
     }
 }
